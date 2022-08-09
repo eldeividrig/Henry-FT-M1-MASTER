@@ -24,7 +24,7 @@ console.log(contador1());
 console.log(contador1());
 console.log(contador1());*/
 
-const cb = function(x) {
+/*const cb = function(x) {
     return x * 2;
 };
 
@@ -49,3 +49,26 @@ console.log(cachedFunction(10));
 console.log(cachedFunction(5));
 console.log(cachedFunction(5));
 console.log(cachedFunction(6));
+console.log(cachedFunction(6));*/
+
+var creaFuncion = function() {
+    var arreglo = [];
+    for (var i = 0; i < 3; i++) {
+        arreglo.push(
+            
+            /*function(){
+                console.log(i); //ak pierde el valor de i, puedo solucionar declarando a i como let o crear una fn creando una copia de i en j
+            }*/
+
+            (function(j){
+                return function(){console.log(j);} //ak el valor de i se guarda en j y no se pierde el valor
+            }(i))
+        );        
+    }
+    return arreglo;
+}
+var arr = creaFuncion();
+
+arr[0]();
+arr[1]();
+arr[2]();
