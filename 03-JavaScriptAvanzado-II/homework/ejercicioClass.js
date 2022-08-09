@@ -48,3 +48,4 @@ const cachedFunction = cacheFunction(cb);
 console.log(cachedFunction(10));
 console.log(cachedFunction(5));
 console.log(cachedFunction(5));
+console.log(cachedFunction(6));
