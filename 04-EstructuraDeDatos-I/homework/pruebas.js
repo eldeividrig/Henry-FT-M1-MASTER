@@ -11,9 +11,9 @@ console.log(factorial(5));*/
 
 function fibonacci(n) {
     if (n < 2) {
-       return 1;
+        return 1;
     } else {
-        return fibonacci(n - 2) + fibonacci (n - 1);
+        return fibonacci(n - 2) + fibonacci(n - 1);
     }
     /*
     for (let i = 2; i <= n; i++) {
@@ -23,11 +23,45 @@ function fibonacci(n) {
 
 }
 
+//console.log(fibonacci(5));
+
+
+/*function decimalABinario(num) {
+    if (num === 1) return '1';
+    if (num === 0) return '0';
+    return decimalABinario(Math.floor(num / 2)) + (num % 2);
+}
+
+console.log(decimalABinario(0));*/
+
+/*function binarioADecimal(num) {
+    var sum = 0;
+    var nroReverse = num.split('').reverse().join('');
+    for (let i = 0; i < nroReverse.length; i++) {
+        sum = sum + nroReverse[i] * 2 ** [i];
+    
+
+    return sum + binarioADecimal();
+}*/
+function toDecimal(binary, i) {
+    // If we reached last character
+    let n = binary.length;
+    if (i == n - 1)
+        return parseInt(binary[i]);
+
+    // Add current tern and recur for
+    // remaining terms
+    return (parseInt(binary[i]) << (n - i - 1)) + toDecimal(binary, i + 1);
+}
+
+// Driver code
+let binary = "1111";
+let i = 0;
+debugger;
+console.log(toDecimal(binary, i));
 
 
 
-
-console.log(fibonacci(2));
 
 
 
@@ -45,7 +79,7 @@ var nuevaArr = new MiArr();
 
 nuevaArr.push('chris');*/
 
-class Node {
+/*class Node {
     constructor(value){
         this.value = value;
         this.next = null;
@@ -66,4 +100,4 @@ class Stack {
 }
 
 let miStack = new Stack();
-miStack.push('David');
+miStack.push('David');*/
