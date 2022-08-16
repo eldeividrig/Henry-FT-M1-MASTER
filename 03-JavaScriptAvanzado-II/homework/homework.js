@@ -63,15 +63,12 @@ function cacheFunction(cb) {
   */
   var cache = {};
   return function(arg) {
-    if (cache.hasOwnProperty(arg)) {
-      return cache[arg];
-    }else{
+    if (!cache.hasOwnProperty(arg)) {
       cache[arg] = cb(arg);
       return cache[arg];
-    }
-    
+    }      
+    return cache[arg];
   }
-
 }
 
 // Bind
