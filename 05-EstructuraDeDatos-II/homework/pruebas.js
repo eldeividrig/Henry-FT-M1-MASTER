@@ -1,4 +1,4 @@
-function Node(data) {
+/*function Node(data) {
     this.data = data;
     this.next = null;
 }
@@ -65,4 +65,10 @@ console.log(list1._length);
 list1
 let list2 = new List();
 list2.getAll();
-list2
+list2*/
+
+//Listas Doblemente enlazadas
+
+
+
+
