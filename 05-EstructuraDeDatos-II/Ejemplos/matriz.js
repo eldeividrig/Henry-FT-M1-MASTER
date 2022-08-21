@@ -49,7 +49,7 @@ class Matriz {
     for( var i=0; i<this.data.length; i++) {
       newMatriz[i]=[];
       for (var j=0; j<this.data[i].length; j++) {
-        for (var k=0; k<array.length; k++) {
+        for (var k=0; k<this.data.length; k++) {
           suma += this.data[k][j] * mat[j][k];
         }
         newMatriz[i][j] = suma;
@@ -69,7 +69,31 @@ class Matriz {
     }
   }
 }
- 
+
+let mat1 = new Matriz(4, 4);
+let acum = 0;
+for (let i = 0; i < 4; i++) {
+  for (let j = 0; j < 4; j++) {
+    mat1.data[i][j] = acum ++;
+  }  
+}
+
+let mat2 = new Matriz(4, 4);
+for (let i = 0; i < 4; i++) {
+  for (let j = 0; j < 4; j++) {
+    mat2.data[i][j] = acum ++;
+  }  
+}
+
+
+console.log(mat1.buscar(4));
+
+console.log(mat1.sumar(mat2.data));
+
+console.log(mat2.restar(mat1.data));
+mat1
+mat2
+console.log(mat1.multiplicar(mat2.data));
 
 
 
